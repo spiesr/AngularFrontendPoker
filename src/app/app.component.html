@@ -1,20 +1,57 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<!--Here we introduce the operating instructions -->
+<h1>{{title}}</h1>
+<p>Welcome to the frontend of my poker hand winner selector! To use, please enter the names of the players in the "name" field, and then enter the five cards in the fields next to it using the following abbreviations:</p>
+<p> Values: A - ace, (2-9) - numbered card values, T - ten, J - jack, Q - queen, K - king</p>
+<p> Suits: H - hearts, D - diamonds, C - clubs, S - suits</p>
+<p>For example, if you wanted to indicate someone had the 7 of diamonds, you would write "7D" in one of the card entry fields.</p>
+<!--The following divs let us edit the three player's hand properties-->
+<!--Each field represents part of the three Hand objects in the main class-->
+<div>
+  <label>player one:  
+    <input [(ngModel)]="hand1.player">
+  </label>
+  <label>cards:
+    <input [(ngModel)]="hand1.cards[0]" size="2" maxlength="2">
+    <input [(ngModel)]="hand1.cards[1]" size="2" maxlength="2">
+    <input [(ngModel)]="hand1.cards[2]" size="2" maxlength="2">
+    <input [(ngModel)]="hand1.cards[3]" size="2" maxlength="2">
+    <input [(ngModel)]="hand1.cards[4]" size="2" maxlength="2">
+  </label>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div>
+  <label>player two:  
+    <input [(ngModel)]="hand2.player">
+  </label>
+  <label>cards:
+    <input [(ngModel)]="hand2.cards[0]" size="2" maxlength="2">
+    <input [(ngModel)]="hand2.cards[1]" size="2" maxlength="2">
+    <input [(ngModel)]="hand2.cards[2]" size="2" maxlength="2">
+    <input [(ngModel)]="hand2.cards[3]" size="2" maxlength="2">
+    <input [(ngModel)]="hand2.cards[4]" size="2" maxlength="2">
+  </label>
+</div>
+<div>
+  <label>player three:
+    <input [(ngModel)]="hand3.player">
+  </label>
+  <label>cards:
+    <input [(ngModel)]="hand3.cards[0]" size="2" maxlength="2">
+    <input [(ngModel)]="hand3.cards[1]" size="2" maxlength="2">
+    <input [(ngModel)]="hand3.cards[2]" size="2" maxlength="2">
+    <input [(ngModel)]="hand3.cards[3]" size="2" maxlength="2">
+    <input [(ngModel)]="hand3.cards[4]" size="2" maxlength="2">
+  </label>
+</div>
 
+<!--Verification space that dynamically updates to show what will be sent-->
+<h2>Verify before you submit:</h2>
+<p>player one: {{hand1.player}} {{hand1.cards[0]}} {{hand1.cards[1]}} {{hand1.cards[2]}} {{hand1.cards[3]}} {{hand1.cards[4]}}</p>
+<p>player two: {{hand2.player}} {{hand2.cards[0]}} {{hand2.cards[1]}} {{hand2.cards[2]}} {{hand2.cards[3]}} {{hand2.cards[4]}}</p>
+<p>player three: {{hand3.player}} {{hand3.cards[0]}} {{hand3.cards[1]}} {{hand3.cards[2]}} {{hand3.cards[3]}} {{hand3.cards[4]}}</p>
+
+<!--Check to see the winner-->
+<h2>Submit to see who wins:</h2>
+<button (click)="submit()">Submit</button>
+
+<h2>And the winner is:</h2>
+<p>{{response}}</p>

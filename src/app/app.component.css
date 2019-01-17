@@ -1,0 +1,26 @@
+/*
+ * A little bit of well-used CSS goes a long way towards
+ * making a frontend look better.
+ **/
+h1, h2 {
+  color: #352E3D;
+  font-family: sans-serif;
+}
+body {
+  margin: 2em;
+  background-color: #7A8466;
+}
+input, button {
+  color: #539892;
+  font-family: serif;
+}
+a:link {
+  color: #919FCB;
+}
+a:hover {
+  color: #CED9E2;
+}
+p, label {
+  font-family: sans-serif;
+  color: #352E3D;
+}
